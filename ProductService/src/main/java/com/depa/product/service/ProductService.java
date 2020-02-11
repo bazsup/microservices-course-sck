@@ -22,4 +22,8 @@ public class ProductService {
     public ResponseEntity getAllProduct() {
         return ResponseEntity.status(HttpStatus.OK).body(productRepository.findAll());
     }
+
+    public ResponseEntity findByProductId(int productId) {
+        return ResponseEntity.ok().body(productRepository.findById(productId));
+    }
 }
