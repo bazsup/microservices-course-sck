@@ -5,6 +5,7 @@
  */
 package com.depa.product.controller;
 
+import com.depa.product.model.Product;
 import com.depa.product.response.ProductResponse;
 import com.depa.product.service.ProductService;
 import io.micrometer.core.ipc.http.HttpSender;
@@ -14,6 +15,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -33,5 +36,9 @@ public class ProductController {
     public ResponseEntity findByProductId(@PathVariable String productId){
         int parsedProductId = Integer.parseInt(productId);
         return productService.findByProductId(parsedProductId);
+    }
+    @PostMapping("/product")
+    public ResponseEntity createProduct(@RequestBody Product product){
+        return productService.createProduct(product);
     }
 }

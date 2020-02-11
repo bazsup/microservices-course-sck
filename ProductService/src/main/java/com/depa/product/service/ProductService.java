@@ -5,6 +5,7 @@
  */
 package com.depa.product.service;
 
+import com.depa.product.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,5 +26,9 @@ public class ProductService {
 
     public ResponseEntity findByProductId(int productId) {
         return ResponseEntity.ok().body(productRepository.findById(productId));
+    }
+
+    public ResponseEntity createProduct(Product product) {
+        return ResponseEntity.ok().body(productRepository.save(product));
     }
 }

@@ -23,7 +23,7 @@ public class Product {
     
     private String productDescription;
     
-    private String productImgUrl;
+//    private String productImgUrl;
     
     private double price;
     
@@ -54,13 +54,13 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    public String getProductImgUrl() {
-        return productImgUrl;
-    }
+//    public String getProductImgUrl() {
+//        return productImgUrl;
+//    }
 
-    public void setProductImgUrl(String productImgUrl) {
-        this.productImgUrl = productImgUrl;
-    }
+//    public void setProductImgUrl(String productImgUrl) {
+//        this.productImgUrl = productImgUrl;
+//    }
 
     public double getPrice() {
         return price;
@@ -78,9 +78,11 @@ public class Product {
         this.productImageList = productImageList;
     }
 
+//    
+
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", productName=" + productName + ", productDescription=" + productDescription + ", productImgUrl=" + productImgUrl + ", price=" + price + ", productImageList=" + productImageList + '}';
+        return "Product{" + "id=" + id + ", productName=" + productName + ", productDescription=" + productDescription + ", price=" + price + ", productImageList=" + productImageList + '}';
     }
     
     
